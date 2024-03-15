@@ -2,8 +2,9 @@ use reqwest::blocking::Client;
 
 pub fn fetch_user() {
     let client = Client::new();
+    const API_ENDPOINT: &str = "https://random-data-api.com/api/v2/users";
 
-    let response = client.get("https://random-data-api.com/api/v2/users").send();
+    let response = client.get(API_ENDPOINT).send();
 
     match response {
         Ok(res) => {
